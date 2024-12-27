@@ -1,0 +1,184 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0a0a0a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+}
+
+.container {
+    background: linear-gradient(45deg, #00bcd4, #ff4081, #673ab7);
+    background-size: 300% 300%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: gradientAnimation 3s ease infinite;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-family: 'Lobster', cursive;
+    color: #fff;
+    text-shadow: 3px 3px 5px #000, -1px -1px 2px #000, 1px 1px 1px #fff;
+}
+
+input[type="date"] {
+    padding: 15px;
+    font-size: 18px;
+    margin: 15px 0;
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+input[type="date"]:focus {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
+}
+
+button:hover {
+    background-color: #ff4081;
+    transform: scale(1.1);
+}
+
+#result {
+    margin-top: 30px;
+}
+
+#daysRemaining, #daysPassed {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #00bcd4;
+    text-shadow: 0 0 10px #00bcd4, 0 0 15px #00bcd4;
+}
+
+#yearsRemaining {
+    font-size: 24px;
+    color: #ff4081;
+    margin: 10px 0;
+    text-shadow: 0 0 10px #ff4081, 0 0 15px #ff4081;
+}
+
+#yearsPassed {
+    font-size: 24px;
+    color: #000;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px #FFFFFF;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#credits {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    padding: 20px;
+    z-index: 100;
+    animation: creditsScroll 60s linear forwards;
+    display: none;
+}
+
+@keyframes creditsScroll {
+    0% {
+        bottom: -100%;
+    }
+    100% {
+        bottom: 100%;
+    }
+}
+
+#clock {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+#createdText {
+    font-size: 14px;
+    color: #0000FF;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #FFFFFF;
+    margin-top: 5px;
+}
+
+#copyright {
+    position: absolute;
+    bottom: 10px;
+    font-size: 14px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.butterfly {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    font-size: 50px;
+    animation: flyButterfly 10s infinite ease-in-out;
+    z-index: 2;
+}
+
+@keyframes flyButterfly {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(200px) translateY(50px);
+    }
+    50% {
+        transform: translateX(400px) translateY(0);
+    }
+    75% {
+        transform: translateX(600px) translateY(-50px);
+    }
+    100% {
+        transform: translateX(800px) translateY(0);
+    }
+}
